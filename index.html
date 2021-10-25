@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Today is :<span id="day"></span></h1>
+        <h1>Time is :<span id="time"></span></h1>
+        <button onclick="checkDate()">Click here</button>
+    </center>
+    <script>
+        const checkDate = () => {
+
+const date = new Date();
+let dayNum = date.getDay();
+let day
+if(dayNum == 0){
+     day = "Sunday"
+}else if(dayNum ==1){
+    day = "Monday";
+}else if(dayNum == 2){
+    day = "Tuesday"
+}else if(dayNum == 3){
+    day = "Wednesday"
+}else if(dayNum == 4){
+    day = "Thursday"
+}else if(dayNum == 5){
+    day == "Friday"
+}else{
+    day = "saturday"
+}
+
+document.getElementById("day").innerHTML = day;
+document.getElementById("time").innerHTML = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`;
+
+}
+    </script>
+</body>
+</html>
